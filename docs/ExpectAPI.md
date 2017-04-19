@@ -22,12 +22,12 @@ When you're writing tests, you often need to check that values meet certain cond
 
 The `expect` function is used every time you want to test a value. You will rarely call `expect` by itself. Instead, you will use `expect` along with a "matcher" function to assert something about a value.
 
-It's easier to understand this with an example. Let's say you have a method `bestLaCroixFlavor()` which is supposed to return the string `'grapefruit'`.
+It's easier to understand this with an example. Let's say you have a method `bestLaCroixFlavor()` which is supposed to return the string `'pamplemousse'`.
 Here's how you would test that:
 
 ```js
-test('the best flavor is grapefruit', () => {
-  expect(bestLaCroixFlavor()).toBe('grapefruit');
+test('the best flavor is pamplemousse', () => {
+  expect(bestLaCroixFlavor()).toBe('pamplemousse');
 });
 ```
 
@@ -622,11 +622,11 @@ Use `.toEqual` when you want to check that two objects have the same value. This
 
 ```js
 const can1 = {
-  flavor: 'grapefruit',
+  flavor: 'pamplemousse',
   ounces: 12,
 };
 const can2 = {
-  flavor: 'grapefruit',
+  flavor: 'pamplemousse',
   ounces: 12,
 };
 
@@ -656,13 +656,13 @@ expect('').not.toHaveLength(5);
 
 Use `.toMatch` to check that a string matches a regular expression.
 
-For example, you might not know what exactly `essayOnTheBestFlavor()` returns, but you know it's a really long string, and the substring `grapefruit` should be in there somewhere. You can test this with:
+For example, you might not know what exactly `essayOnTheBestFlavor()` returns, but you know it's a really long string, and the substring `pamplemousse` should be in there somewhere. You can test this with:
 
 ```js
 describe('an essay on the best flavor', () => {
-  test('mentions grapefruit', () => {
-    expect(essayOnTheBestFlavor()).toMatch(/grapefruit/);
-    expect(essayOnTheBestFlavor()).toMatch(new RegExp('grapefruit'));
+  test('mentions pamplemousse', () => {
+    expect(essayOnTheBestFlavor()).toMatch(/pamplemousse/);
+    expect(essayOnTheBestFlavor()).toMatch(new RegExp('pamplemousse'));
   });
 });
 ```
@@ -670,9 +670,9 @@ describe('an essay on the best flavor', () => {
 This matcher also accepts a string, which it will try to match:
 
 ```js
-describe('grapefruits are healthy', () => {
-  test('grapefruits are a fruit', () => {
-    expect('grapefruits').toMatch('fruit');
+describe('pamplemousses are healthy', () => {
+  test('pamplemousses are a fruit', () => {
+    expect('pamplemousses').toMatch('fruit');
   });
 });
 ```
